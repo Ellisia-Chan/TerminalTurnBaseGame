@@ -5,6 +5,7 @@
 
 ### Turn Base Combat Game
 
+Preview:
 
 ![image](https://github.com/ChristianJude23/TerminalTurnBaseGame/assets/152279955/3d5039c0-46a7-40c5-80ac-93f35b5f870e)
 
