@@ -51,8 +51,8 @@ namespace TurnBaseCombatGame
             Dictionary<Difficulty, (int playerHealth, int enemyHealth, int playerAttack, int enemyAttack, int playerHeal, int enemyHeal)> difficultySettings =
                 new Dictionary<Difficulty, (int, int, int, int, int, int)>
                 {
-                    {Difficulty.Easy, (100, 100, 20, 10, 30, 20) },
-                    {Difficulty.Medium, (100, 100, 15, 15, 15, 15) },
+                    {Difficulty.Easy, (100, 100, 30, 20, 30, 20) },
+                    {Difficulty.Medium, (100, 100, 20, 15, 15, 15) },
                     {Difficulty.Hard, (100, 100, 30, 30, 10, 10) }
                 };
 
@@ -69,8 +69,8 @@ namespace TurnBaseCombatGame
             Console.WriteLine();
             Console.WriteLine(" | Player Stats:             |  Enemy Stats:            |");
             Console.WriteLine($" |  Max Health: {MaxHealth} Hp       |   Max Health: {MaxHealth} Hp     |");
-            Console.WriteLine($" |  Max Attack Dmg: {playerAttack} Dmg   |   Max Attack Dmg: {playerAttack} Dmg |");
-            Console.WriteLine($" |  Max Heal: {playerHeal} Hp          |   Max Heal: {playerHeal} Hp        |");
+            Console.WriteLine($" |  Max Attack Dmg: {playerAttack} Dmg   |   Max Attack Dmg: {enemyAttack} Dmg |");
+            Console.WriteLine($" |  Max Heal: {playerHeal} Hp          |   Max Heal: {enemyHeal} Hp        |");
 
             Thread.Sleep(2000);
 
@@ -85,6 +85,14 @@ namespace TurnBaseCombatGame
                     Console.Write("  > ");
 
                     action = Console.ReadLine();
+
+                    if (action.ToLower() != "a" && action.ToLower() != "h")
+                    {
+                        Console.WriteLine("  Invalid Action, Try Again");
+                        Console.WriteLine();
+                        Thread.Sleep(1000);
+                        continue;
+                    }
                 }
                 catch (FormatException)
                 {
